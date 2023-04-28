@@ -1,6 +1,6 @@
 # SvelteKit Markdown Blog
 
-Learn how to build and extend a blazingly fast SvelteKit Markdown blog for poets.
+Learn how to build a blazingly fast and extendable SvelteKit Markdown blog for poets.
 
 ## Post
 
