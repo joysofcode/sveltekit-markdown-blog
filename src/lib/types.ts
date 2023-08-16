@@ -7,4 +7,6 @@ export type Post = {
 	date: string
 	categories: Categories[]
 	published: boolean
+	tags: string[]
+	banner: string
 }

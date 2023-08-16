@@ -1,13 +1,33 @@
 <script lang="ts">
+	import { url } from '$lib/config.js'
 	import { formatDate } from '$lib/utils'
 
+
 	export let data
+	
 </script>
 
 <svelte:head>
-	<title>{data.meta.title}</title>
+	<title>{data.meta.title} | {"PPC Panos"} </title>
+	<meta name="title" content={data.meta.title} />
+	<meta name="description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
+	<meta property="og:description" content={data.meta.description} />
+	<meta property="og:site_name" content="PPC Panos" />
+	<meta property="og:image" content={data.meta.banner} />
+
+	<meta property="twitter:title" content={data.meta.title} />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:description" content={data.meta.description} />
+	<meta property="twitter:site_name" content="PPC Panos" />
+	<meta property="twitter:image" content={data.meta.banner} />
+
+	<link rel="canonical" href={url}{data.url} />
+
+
+
+    
 </svelte:head>
 
 <article>
@@ -22,9 +42,15 @@
 		{/each}
 	</div>
 
+	<div class="image">
+		<img src={data.meta.banner} title={data.meta.title} alt={data.meta.title} />
+	</div>
+
 	<div class="prose">
 		<svelte:component this={data.content} />
 	</div>
+
+
 </article>
 
 <style>
@@ -40,6 +66,11 @@
 	h1 + p {
 		margin-top: var(--size-2);
 		color: var(--text-2);
+	}
+
+	.image {
+		padding-top: 2%;
+		padding-bottom: 2%;
 	}
 
 	.tags {
