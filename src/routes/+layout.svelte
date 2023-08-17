@@ -15,7 +15,6 @@
 
 
 
-
 <div class="layout">
 	<Header />
 
