@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let src: string
-	export let alt: string
+	type Props = {
+		src: string
+		alt: string
+	}
+
+	let { src, alt }: Props = $props()
 </script>
 
 <img {src} {alt} loading="lazy" />

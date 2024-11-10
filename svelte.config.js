@@ -2,8 +2,7 @@ import adapter from '@sveltejs/adapter-vercel'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 import { mdsvex, escapeSvelte } from 'mdsvex'
-import { getHighlighter } from 'shiki'
-import remarkUnwrapImages from 'remark-unwrap-images'
+import { createHighlighter } from 'shiki'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 
@@ -15,7 +14,7 @@ const mdsvexOptions = {
 	},
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await getHighlighter({
+			const highlighter = await createHighlighter({
 				themes: ['poimandres'],
 				langs: ['javascript', 'typescript']
 			})
@@ -24,7 +23,7 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`
 		}
 	},
-	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	remarkPlugins: [[remarkToc, { tight: true }]],
 	rehypePlugins: [rehypeSlug]
 }
 

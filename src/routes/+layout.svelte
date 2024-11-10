@@ -8,7 +8,7 @@
 	import 'open-props/buttons'
 	import '../app.css'
 
-	export let data
+	let { children, data } = $props()
 </script>
 
 <div class="layout">
@@ -16,7 +16,7 @@
 
 	<main>
 		<PageTransition url={data.url}>
-			<slot />
+			{@render children?.()}
 		</PageTransition>
 	</main>
 
@@ -31,15 +31,13 @@
 		grid-template-rows: auto 1fr auto;
 		margin-inline: auto;
 		padding-inline: var(--size-7);
-	}
 
-	main {
-		padding-block: var(--size-9);
-	}
-
-	@media (min-width: 1440px) {
-		.layout {
+		@media (min-width: 1440px) {
 			padding-inline: 0;
+		}
+
+		main {
+			padding-block: var(--size-9);
 		}
 	}
 </style>

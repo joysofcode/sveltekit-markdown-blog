@@ -1,10 +1,10 @@
-@import '@fontsource/manrope';
+@import '@fontsource/atkinson-hyperlegible';
 @import '@fontsource/jetbrains-mono';
 
 html {
 	/* font */
-	--font-sans: 'Manrope', sans-serif;
-	--font-mono: 'JetBrains Mono', monospace;
+	--font-system-ui: 'Atkinson Hyperlegible', sans-serif;
+	--font-monospace-code: 'JetBrains Mono', monospace;
 
 	/* dark */
 	--brand-dark: var(--orange-3);
@@ -133,28 +133,36 @@ li {
 	color: var(--text-1);
 }
 
-.prose :is(h2, h3, h4, h5, h6) {
-	margin-top: var(--size-8);
-	margin-bottom: var(--size-3);
-}
+.prose {
+	p {
+		:not(:is(h2, h3, h4, h5, h6) + p) {
+			margin-top: var(--size-7);
+		}
 
-.prose p:not(:is(h2, h3, h4, h5, h6) + p) {
-	margin-top: var(--size-7);
-}
+		&:has(img) {
+			display: contents;
+		}
+	}
 
-.prose :is(ul, ol) {
-	list-style-type: '🔥';
-	padding-left: var(--size-5);
-}
+	:is(h2, h3, h4, h5, h6) {
+		margin-top: var(--size-8);
+		margin-bottom: var(--size-3);
+	}
 
-.prose :is(ul, ol) li {
-	margin-block: var(--size-2);
-	padding-inline-start: var(--size-2);
-}
+	:is(ul, ol) {
+		list-style-type: '🔥';
+		padding-left: var(--size-5);
+	}
 
-.prose pre {
-	max-inline-size: 100%;
-	padding: var(--size-3);
-	border-radius: 8px;
-	tab-size: 2;
+	:is(ul, ol) li {
+		margin-block: var(--size-2);
+		padding-inline-start: var(--size-2);
+	}
+
+	pre {
+		max-inline-size: 100%;
+		padding: var(--size-3);
+		border-radius: 8px;
+		tab-size: 2;
+	}
 }
