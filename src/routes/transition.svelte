@@ -1,12 +1,18 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte'
 	import { fade } from 'svelte/transition'
 
-	export let url: string
+	type Props = {
+		children: Snippet
+		url: string
+	}
+
+	let { children, url }: Props = $props()
 </script>
 
 {#key url}
 	<div class="transition" in:fade>
-		<slot />
+		{@render children?.()}
 	</div>
 {/key}
 

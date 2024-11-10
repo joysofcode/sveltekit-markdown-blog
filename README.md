@@ -6,11 +6,11 @@ Learn how to build a blazingly fast and extendable SvelteKit Markdown blog for p
 
 ✍️ https://joyofcode.xyz/sveltekit-markdown-blog
 
-## Remote Development
+## REPL
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/joysofcode/sveltekit-markdown-blog)
 
-## Local Development
+## Setup
 
 ### 🧑‍🤝‍🧑 Clone the project
 
