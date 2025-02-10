@@ -1,6 +1,5 @@
 <script lang="ts" module>
-	import { img } from '$lib/components/custom'
-	export { img }
+	export { img } from '$lib/components/custom'
 </script>
 
 <script lang="ts">
